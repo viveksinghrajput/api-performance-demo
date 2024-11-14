@@ -44,12 +44,14 @@ ALTER TABLE `price` ADD FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
 
 
 -- Insert data into category table
+
 INSERT INTO `category` (`id`, `name`, `type`, `status`) VALUES
 (1, 'Electronics', 'Goods', 'active'),
 (2, 'Clothing', 'Goods', 'active'),
 (3, 'Home Appliances', 'Goods', 'active');
 
 -- Insert data into products table
+
 INSERT INTO `products` (`id`, `category_id`, `name`, `description`, `status`) VALUES
 (1, 1, 'Smartphone', 'Latest smartphone with high-speed performance', 'active'),
 (2, 1, 'Laptop', '15-inch laptop with 8GB RAM, 256GB SSD', 'active'),
@@ -57,6 +59,7 @@ INSERT INTO `products` (`id`, `category_id`, `name`, `description`, `status`) VA
 (4, 3, 'Air Conditioner', '1.5 ton AC with energy-efficient cooling', 'active');
 
 -- Insert data into price table
+
 INSERT INTO `price` (`id`, `product_id`, `price`, `valid_from`, `valid_to`, `status`) VALUES
 (1, 1, 699.99, NOW(), DATE_ADD(NOW(), INTERVAL 1 YEAR), 'active'),
 (2, 2, 1299.99, NOW(), DATE_ADD(NOW(), INTERVAL 1 YEAR), 'active'),
@@ -64,6 +67,7 @@ INSERT INTO `price` (`id`, `product_id`, `price`, `valid_from`, `valid_to`, `sta
 (4, 4, 299.99, NOW(), DATE_ADD(NOW(), INTERVAL 1 YEAR), 'active');
 
 -- Insert data into inventory table
+
 INSERT INTO `inventory` (`id`, `product_id`, `warehouse_id`, `available_quantity`, `reserved_quantity`, `status`) VALUES
 (1, 1, 1, 100, 10, 'available'),
 (2, 2, 1, 50, 5, 'available'),
@@ -72,6 +76,7 @@ INSERT INTO `inventory` (`id`, `product_id`, `warehouse_id`, `available_quantity
 
 
 -- fetch data from table
+
 SELECT * from products p ;
 
 SELECT * FROM category c ;
